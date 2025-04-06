@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YNPT Employee Portal</title>
+    <style>
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        h1 {
+            color: #f7931e; /* برتقالي سابك */
+        }
+        input[type="text"], input[type="submit"] {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+            border: 1px solid #1f4090;
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            width: 250px;
+        }
+        input[type="submit"] {
+            background-color: #1f4090; /* أزرق سابك */
+            color: white;
+            cursor: pointer;
+        }
+        .logo {
+            width: 150px;
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 70%;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #f7931e; /* برتقالي */
+            color: white;
+        }
+        td {
+            background-color: #e6f0ff; /* لون خفيف */
+        }
+        .message {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <img src="{{ url_for('static', filename='YNPT.png') }}" alt="YNPT Logo" class="logo">
+    <h1>Welcome to YANPET Employee Portal</h1>
+
+    <form method="POST">
+        <input type="text" name="emp_id" placeholder="Enter your Employee ID" required>
+        <input type="submit" value="Search">
+    </form>
+
+    {% if message %}
+        <p class="message">{{ message }}</p>
+    {% endif %}
+
+    {% if result %}
+        <h2 style="color: #1f4090;">Hello {{ result.name }}!</h2>
+        <p style="color: #1f4090;">These are the projects you're assigned to:</p>
+        <table>
+            <tr>
+                <th>Project Name</th>
+                <th>Department</th>
+                <th>Cost</th>
+            </tr>
+            {% for project in result.projects %}
+            <tr>
+                <td>{{ project['Project Name'] }}</td>
+                <td>{{ project['Department'] }}</td>
+                <td>{{ project['Cost'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+</body>
+</html>
