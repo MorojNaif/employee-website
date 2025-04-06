@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: employee-website
+    env: python
+    plan: free
+    buildCommand: ""
+    startCommand: python app.py
+    envVars:
+      - key: PORT
+        value: 5000
