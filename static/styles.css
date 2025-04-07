@@ -1,73 +1,61 @@
+/* استيراد الخط */
+@import url('https://db.onlinewebfonts.com/c/668385edd63abbdd742395f094026885?family=Sraben+Grotesk');
+
 body {
   background-color: white;
-  font-family: "WasabiCond-Book", sans-serif;
+  font-family: "Sraben Grotesk", sans-serif;
   text-align: center;
-  padding: 40px;
+  padding-top: 50px;
 }
 
-.logo {
-  width: 120px;
-  margin-bottom: 20px;
+h1 {
+  color: #f7931e;
 }
 
-.title {
-  font-size: 28px;
-  color: #F57C00; /* Orange - SABIC */
-  margin-bottom: 30px;
-}
-
-form input[type="text"] {
+input[type="text"], input[type="submit"] {
   padding: 10px;
-  width: 250px;
-  border: 2px solid #0055A4; /* SABIC blue */
-  border-radius: 8px;
   font-size: 16px;
-  margin-bottom: 15px;
-}
-
-form button {
-  padding: 10px 20px;
-  background-color: #0055A4; /* SABIC blue */
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-form button:hover {
-  background-color: #003c7d;
-}
-
-.welcome {
-  color: #F57C00;
-  font-size: 24px;
-}
-
-.project-list {
-  list-style: none;
-  padding: 0;
-  margin: 20px auto;
-  width: fit-content;
-}
-
-.project-list li {
-  background-color: #e1f0ff;
-  padding: 10px;
-  margin: 5px;
-  border-left: 5px solid #0055A4;
-  font-weight: bold;
+  margin-top: 10px;
+  border: 1px solid #1f4090;
   border-radius: 5px;
 }
 
-.message {
-  color: gray;
-  font-style: italic;
+input[type="text"] {
+  width: 250px;
 }
 
-.back-link {
-  margin-top: 20px;
-  display: inline-block;
-  color: #0055A4;
-  text-decoration: none;
+input[type="submit"] {
+  background-color: #1f4090;
+  color: white;
+  cursor: pointer;
+}
+
+.logo {
+  width: 150px;
+}
+
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 70%;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background-color: #f7931e;
+  color: white;
+}
+
+td {
+  background-color: #e6f0ff;
+}
+
+.message {
+  color: red;
+  font-weight: bold;
 }

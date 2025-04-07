@@ -3,13 +3,13 @@
 <head>
     <title>YANPET Employee Portal</title>
     
-    <!-- رابط الخط المخصص -->
-    <link href="https://db.onlinewebfonts.com/c/f5e0a434957aabf259003c37b2a54ab3?family=WasabiCond-Book" rel="stylesheet" type="text/css" />
+    <!-- رابط الخط المطلوب -->
+    <link href="https://db.onlinewebfonts.com/c/668385edd63abbdd742395f094026885?family=Sraben+Grotesk" rel="stylesheet" type="text/css"/>
 
     <style>
         body {
             background-color: white;
-            font-family: "WasabiCond-Book", Arial, sans-serif;
+            font-family: "Sraben Grotesk", Arial, sans-serif;
             text-align: center;
             padding-top: 50px;
         }
@@ -53,41 +53,3 @@
             background-color: #e6f0ff; /* لون خفيف */
         }
         .message {
-            color: red;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-    <img src="{{ url_for('static', filename='ynpt.png') }}" alt="YANPET Logo" class="logo">
-    <h1>Welcome to YANPET Employee Portal</h1>
-
-    <form method="POST">
-        <input type="text" name="emp_id" placeholder="Enter your Employee ID" required>
-        <input type="submit" value="Search">
-    </form>
-
-    {% if message %}
-        <p class="message">{{ message }}</p>
-    {% endif %}
-
-    {% if result %}
-        <h2 style="color: #1f4090;">Hello {{ result.name }}!</h2>
-        <p style="color: #1f4090;">These are the projects you're assigned to:</p>
-        <table>
-            <tr>
-                <th>Project Name</th>
-                <th>Department</th>
-                <th>Cost</th>
-            </tr>
-            {% for project in result.projects %}
-            <tr>
-                <td>{{ project['Project Name'] }}</td>
-                <td>{{ project['Department'] }}</td>
-                <td>{{ project['Cost'] }}</td>
-            </tr>
-            {% endfor %}
-        </table>
-    {% endif %}
-</body>
-</html>
