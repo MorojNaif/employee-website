@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <img src="{{ logo_url }}" alt="YNPT Logo" class="logo">
+        <h1>{{ message }}</h1>
+
+        {% for table in tables %}
+            <div class="table-container">
+                {{ table|safe }}
+            </div>
+        {% endfor %}
+
+        <form action="/" method="get">
+            <button class="back-button" type="submit">Search Again</button>
+        </form>
+    </div>
+</body>
+</html>
